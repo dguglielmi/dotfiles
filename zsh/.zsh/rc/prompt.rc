@@ -1,0 +1,23 @@
+# prompt
+
+if [[ ${USER} = "root" ]]; then
+  autoload -U promptinit
+  promptinit
+  prompt gentoo
+else
+  autoload -U colors
+  colors
+
+  # http://zsh.sourceforge.net/Doc/Release/Prompt-Expansion.html
+  ctime="%B%{$fg[blue]%}[%b%{$fg[magenta]%}%*%B%{$fg[blue]%}]%b"
+  chost="%{$fg[green]%}%n%{$fg[white]%}@%{$fg[green]%}%m%{$fg[white]%}:"
+  cpath="%B%{$fg[blue]%}%~ \$%b"
+  end="%{$reset_color%}%"
+
+  # my custom prompt
+  PS1="$ctime $chost $cpath $end"
+fi
+
+# Change VTE Terminal tabs name
+HOSTNAME=$(hostname)
+precmd() { echo -ne "\033]0;${USER}@${HOSTNAME}: ${PWD/$HOME/~}\007"; }
