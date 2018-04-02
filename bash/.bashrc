@@ -1,12 +1,12 @@
 # asia bashrc
 
-C_PURPLE="\[\e[0;35m\]"
+C_MAGENTA="\[\e[0;35m\]"
 C_LBLUE="\[\e[1;34m\]"
 C_GREEN="\[\e[0;32m\]"
 C_WHITE="\[\e[0;37m\]"
 C_NORMAL="\[\e[0m"
 
-export PS1="${C_LBLUE}[${C_PURPLE}\t${C_LBLUE}] ${C_GREEN}\u${C_WHITE}@${C_GREEN}\h${C_WHITE}: ${C_LBLUE}\w \$ ${C_NORMAL}"
+export PS1="${C_LBLUE}[${C_MAGENTA}\t${C_LBLUE}] ${C_GREEN}\u${C_WHITE}@${C_GREEN}\h${C_WHITE}: ${C_LBLUE}\w \$ ${C_NORMAL}"
 export PROMPT_COMMAND='echo -ne "\033]0;${USER}@${HOSTNAME}: ${PWD/$HOME/~}\007"'
 
 [ -f ~/.bash_aliases ] && . ~/.bash_aliases
