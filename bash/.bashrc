@@ -11,6 +11,8 @@ export PROMPT_COMMAND='echo -ne "\033]0;${USER}@${HOSTNAME}: ${PWD/$HOME/~}\007"
 
 [ -f ~/.bash_aliases ] && . ~/.bash_aliases
 
+export GPG_TTY=$(tty)
+
 function pass-sol {
   PASSWORD_STORE_DIR="${HOME}/.pass-sol/" \pass $@
 }
