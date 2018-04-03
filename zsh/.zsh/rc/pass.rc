@@ -1,0 +1,31 @@
+# custom cmd
+
+function pass-sol() {
+  PASSWORD_STORE_DIR="${HOME}/.pass-sol" \pass $@
+}
+
+function pass-perso() {
+  PASSWORD_STORE_DIR="${HOME}/.pass-perso" \pass $@
+}
+
+function pass-infra() {
+  PASSWORD_STORE_DIR="${HOME}/.pass-infra" \pass $@
+}
+
+# completion
+_pass_sol() {
+  PASSWORD_STORE_DIR="${HOME}/.pass-sol" _pass
+}
+
+_pass_perso() {
+  PASSWORD_STORE_DIR="${HOME}/.pass-perso" _pass
+}
+
+_pass_infra() {
+  PASSWORD_STORE_DIR="${HOME}/.pass-infra" _pass
+}
+
+autoload -U compinit
+compdef '_pass_sol' pass-sol
+compdef '_pass_perso' pass-perso
+compdef '_pass_infra' pass-infra
