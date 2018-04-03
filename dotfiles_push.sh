@@ -26,6 +26,6 @@ cp -f ${HOME}/.vim/colors/* ${GIT_VIM_DIR}/colors/
 
 cp -f ${HOME}/.zshrc ${GIT_ZSH_DIR}/
 cp -f ${HOME}/.zsh/colors ${GIT_ZSH_DIR}/.zsh/
-cp -f ${HOME}/.zsh/rc ${GIT_ZSH_DIR}/.zsh/rc/
+cp -f ${HOME}/.zsh/rc/* ${GIT_ZSH_DIR}/.zsh/rc/
 
 git add .
