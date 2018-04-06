@@ -1,5 +1,7 @@
 # bashmode
 
+bindkey -v
+
 # allow ctrl-a to go to beginning of line (insert mode)
 bindkey '^a' beginning-of-line
 # allow ctrl-e to go to end of line (insert mode)
