@@ -10,3 +10,4 @@
 	co = checkout
 	ci = commit
 	up = pull
+	ls = log --format='%t %an %s'
