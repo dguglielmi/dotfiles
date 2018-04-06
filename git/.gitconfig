@@ -1,0 +1,12 @@
+[user]
+	name = David Guglielmi
+	email = david.guglielmi@gmail.com
+	signingkey = DDCA459B0AB98D59DACD638F1642DEF553D8A29E
+[commit]
+	gpgsign = true
+[gpg]
+	program = gpg2
+[alias]
+	co = checkout
+	ci = commit
+	up = pull
