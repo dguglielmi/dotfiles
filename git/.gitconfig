@@ -11,3 +11,5 @@
 	ci = commit
 	up = pull
 	ls = log --format='%t %an %s'
+[core]
+	pager = less -F -X
