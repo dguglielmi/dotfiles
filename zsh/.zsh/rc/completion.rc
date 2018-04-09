@@ -12,3 +12,10 @@ zstyle ':completion:*' menu select=2
 zstyle ':completion:*' select-prompt '%SScrolling active: current selection at %p%s'
 zstyle ':completion:*:descriptions' format '%U%F{yellow}%d%f%u'
 
+# use ssh config before known_hosts for hosts completion
+zstyle -e ':completion:*:hosts' hosts 'reply=(
+  ${=${${${${(@M)${(f)"$(cat ${HOME}/.ssh/config 2>/dev/null)"}:#Host *}#Host }:#*\**}:#*\?*}}
+  ${=${${${${(@M)${(f)"$(cat ${HOME}/.ssh/config 2>/dev/null)"}:#host *}#host }:#*\**}:#*\?*}}
+  ${=${${(f)"$(cat {/etc/ssh_, ${HOME}/.ssh/known_}hosts(|2)(N) 2>/dev/null)"}%%[#| ]*}//,/ }
+  ${=${(f)"$(cat /etc/hosts(|)(N) <<(ypcat hosts 2>/dev/null))"}%%\#*}
+)'
