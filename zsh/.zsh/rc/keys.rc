@@ -6,3 +6,7 @@ bindkey -v
 bindkey '^a' beginning-of-line
 # allow ctrl-e to go to end of line (insert mode)
 bindkey '^e' end-of-line
+
+# history
+bindkey '\e[3~' delete-char
+bindkey '^R' history-incremental-search-backward

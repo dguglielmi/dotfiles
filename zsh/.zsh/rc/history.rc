@@ -5,6 +5,3 @@ export SAVEHIST=$HISTSIZE
 
 setopt hist_ignore_all_dups
 setopt hist_ignore_space
-
-bindkey '\e[3~' delete-char
-bindkey '^R' history-incremental-search-backward
