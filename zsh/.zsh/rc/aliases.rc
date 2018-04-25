@@ -9,8 +9,8 @@ alias mv="mv -i"
 alias rm="rm -i"
 
 if [[ ${USER} = "root" ]]; then
-  alias vihosts="${EDITOR} /etc/hosts"
+  alias vihosts="${EDITOR:-vim} /etc/hosts"
 else
-  alias vihosts="sudo ${EDITOR} /etc/hosts"
+  alias vihosts="sudo ${EDITOR:-vim} /etc/hosts"
   alias mtr="sudo mtr"
 fi
